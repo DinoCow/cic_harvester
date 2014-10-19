@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 
+#self added
+harvest_dir/
+docs.csv
+
 # C extensions
 *.so
 
