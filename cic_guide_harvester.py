@@ -3,7 +3,7 @@ import urllib2
 
 import csv
 
-save_dir = "harvest_dir"
+save_dir = "harvest_dir/Guides"
 url_file = 'docs.csv'
 
 f = open(url_file)
@@ -23,8 +23,12 @@ for row in csv_f:
 	print(title)
 
 	#save to file
-	filename = save_dir + "/" + soup.title.string + ".txt"
+	filename = save_dir + "/" + soup.title.string + ".html"
 	
 	outfile = open(filename, 'w')
+	outfile.write("<html>\n")
+	outfile.write("<body>\n")
 	outfile.write(main)
+	outfile.write("</body>\n")
+	outfile.write("</html>")
 	outfile.close()
